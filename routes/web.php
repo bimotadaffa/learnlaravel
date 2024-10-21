@@ -6,7 +6,7 @@ Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
 });
 Route::get('/about', function () {
-    return view('about', ['title' => 'About Page']);
+    return view('about', ['name'=>'bimota', 'title' => 'About Page']);
 });
 
 Route::get('/blog', function () {
