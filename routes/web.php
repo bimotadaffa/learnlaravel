@@ -3,16 +3,27 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home', ['title' => 'Home Page']);
+    return view('home', ['title' => 'Home']);
 });
 Route::get('/about', function () {
-    return view('about', ['name'=>'bimota', 'title' => 'About Page']);
+    return view('about', ['name'=>'bimota', 'title' => 'About']);
 });
 
-Route::get('/blog', function () {
-    return view('blog', ['title' => 'Blog Page']);
+Route::get('/posts', function () {
+    return view('posts', ['title' => 'Blog', 'posts' => [
+        [
+            'title' => 'Judul Artikel 1',
+            'author' => 'Bimota Ares',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quibusdam nostrum odio est facere ex fugiat magni? Ab harum aut esse ex facilis ipsum, voluptas error! Laboriosam porro nostrum dicta.'
+        ],
+        [
+            'title' => 'Judul Artikel 2',
+            'author' => 'Bimota Ares',
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa quasi ratione saepe consequatur odio eos, soluta aliquam. Dolorum voluptas ex vel totam rem repellendus iusto numquam quisquam, provident deserunt! Blanditiis.'
+        ]
+    ]]);
 });
 
 Route::get('/contact', function () {
-    return view('contact', ['title' => 'Contact Page']);
+    return view('contact', ['title' => 'Contact']);
 });
